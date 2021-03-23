@@ -25,7 +25,7 @@ function getUserinfo() {
         //     Authorization: localStorage.getItem('token') || ''
         // },
         success: function (res) {
-            console.log(res);
+         
             if (res.status !==0) {
                 return layer.msg('获取资料失败')
             }
@@ -42,7 +42,7 @@ function renderAvatar(user){
     $('#weluser').html('欢迎&nbsp;&nbsp;' + name)
     //渲染头像
     if (user.user_pic !== null) {
-        $('.layui-nav-img').src(user.user_pic).show()
+        $('.layui-nav-img').attr('src',user.user_pic).show()
         $('.text-avatar').hide()
     } else {
         $('.layui-nav-img').hide()
